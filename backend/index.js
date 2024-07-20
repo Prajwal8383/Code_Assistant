@@ -25,7 +25,7 @@ app.post('/complete', async (req, res) => {
   const { code } = req.body;
   
   try {
-    const prompt=`complete the code : ${code}"`;
+    const prompt=`complete the code : ${code}`;
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
@@ -39,7 +39,7 @@ app.post('/explain', async (req, res) => {
     const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
   const { code } = req.body;
   try{
-    const prompt=`explain the code : ${code}"`;
+    const prompt=`explain the code : ${code}`;
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
@@ -81,3 +81,17 @@ app.post('/beautify', async (req, res) => {
 // });
 
 
+app.post('/output',async(req,res)=>{
+  const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+  const { code, input } = req.body;
+  
+  try {
+    const prompt=`give only the output of this code, no messages : ${code} and with the input(s) : ${input}`;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    res.json({ text });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+})

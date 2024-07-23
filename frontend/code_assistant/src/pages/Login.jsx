@@ -27,7 +27,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900">
+   
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900" >
       <h1 className="pl-4 pt-10 mb-4 text-2xl font-bold font-sans text-gray-900 dark:text-black md:text-5xl lg:text-6xl flex justify-center">
         Code Assistant
       </h1>
@@ -65,7 +66,8 @@ const Login = () => {
           </button>
         </div>
       </div>
-    </div>
+      </div>
+
   );
 };
 

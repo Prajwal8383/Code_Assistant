@@ -6,7 +6,7 @@ import CompileCode from './pages/CompileCode';
 import CodeAssistant from './pages/CodeAssistant';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import LoginSuccess from './pages/LoginSuccess';
+
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         
         <Route path='/login' element={<Login />}/>
         <Route path='/signup' element={ <Signup />}/>
-        <Route path='/success' element={<LoginSuccess />}/>
+        
 
         <Route path="/home" element={<HomePage />} />
         <Route path="/compile" element={<CompileCode />} />
